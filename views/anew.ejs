@@ -8,7 +8,7 @@
           <h1 style="text-align: center">Add your answer!!</h1>
           <h2 style="text-align: center"><%= blog.title %>??</h2>
             <p>by-<%= blog.author.username %></p>
-            <form action="/blogs/<%= blog._id %>/comment" method="POST">
+            <form action="/b/<%= blog._id %>" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text" name="comment[text]" placeholder="text">
                 </div>

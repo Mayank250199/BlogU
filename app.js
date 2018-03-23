@@ -12,7 +12,7 @@ var express = require("express"),
 
     var commentRoutes    = require("./routes/comments");
 
-mongoose.connect("mongodb://localhost/blog_app", {useMongoClient: true});
+mongoose.connect("mongodb://blogu:blogu@ds123259.mlab.com:23259/blogu", {useMongoClient: true});
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -169,5 +169,5 @@ app.get("/blogs/:id",function (req,res) {
 
 
 app.listen(3000,function(){
-  console.log("blog server started");
+  console.log("blog server started at 3000");
 });

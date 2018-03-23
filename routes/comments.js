@@ -18,7 +18,7 @@ router.get("/new",middleware.isLoggedIn, function(req, res){
 });
 
 //Comments Create
-router.post("/",middleware.isLoggedIn,function(req, res){
+router.post("/b/:id",middleware.isLoggedIn,function(req, res){
    //lookup blog using ID
    Blog.findById(req.params.id, function(err, blog){
        if(err){
@@ -34,8 +34,8 @@ router.post("/",middleware.isLoggedIn,function(req, res){
                comment.author.username = req.user.username;
                //save comment
                comment.save();
-              
-                  blog.comments.push(req.body);
+console.log("hello");
+                  blog.comments.push(req.body.comment);
                blog.save();
                console.log(comment);
                res.redirect('/blogs/' + blog._id);
