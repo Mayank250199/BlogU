@@ -1,0 +1,83 @@
+<% include partials/header %>
+
+<div style="
+padding-top:100px;
+margin:0 auto;">
+<div class="ui main text container segment">
+  <div class="ui huge header"><%=blog.title%></div>
+    <p>by-<%= blog.author.username %></p>
+  <div class="ui attached ">
+    <div class="item">
+      <img class="ui centered rounded image" src="<%=blog.image%>">
+      <div class="content">
+        <span><%=blog.created.toDateString() %></span>
+      </div>
+      <div class="description">
+        <p><%-blog.body%></p>
+
+
+      </div>
+    </div>
+  </div>
+  <form  class="ui form" action="/blogs/<%=blog._id%>/edit" method="post">
+    <a  class="ui orange basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+  </form>
+  <form class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="post">
+    <button class="ui red basic button">Delete</button>
+  </form>
+
+
+</div>
+</div>
+
+<div style="
+padding-top:50px;
+margin:0 auto;">
+<div class="ui main text container segment">
+  <div class="ui huge header">Answers -</div>
+  <div class="ui attached ">
+
+    <div class="well">
+             <div class="text-right">
+                 <a class="btn btn-success" href="/blogs/<%= blog._id %>/comment/new">Add your answer</a>
+             </div>
+             <hr>
+
+             <% blog.comments.forEach(function(comment){ %>
+                 <div class="row">
+                     <div class="col-md-12">
+                         <strong><%= comment.author.username %></strong>
+                         <span class="pull-right">10 days ago</span>
+                         <p>
+                             <%= comment.text %>
+                         </p>
+
+                     </div>
+                 </div>
+             <% }) %>
+
+         </div>
+
+  </div>
+
+
+
+
+</div>
+</div>
+
+
+
+
+<!-- to be done with the authentication -->
+<!-- <form  class="ui form" action="/blogs/<%=blog._id%>/edit" method="post">
+  <a  class="ui orange basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+</form>
+<form class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="post">
+  <button class="ui red basic button">Delete</button>
+</form> -->
+
+
+
+
+<% include partials/footer %>

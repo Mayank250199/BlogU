@@ -1,0 +1,42 @@
+<% include partials/header %>
+
+
+<div style="
+padding-top:100px;
+margin:0 auto;">
+</div>
+<div class="ui main text container segment">
+  <div class="ui huge header" ><h2>-<%= currentUser.username %></h2></div>
+  <a href="/blogs/person/addjob">add job credentials <i class="briefcase icon"></i></a>
+  <hr>
+  <a href="/blogs/person/addedu">add educational credentials <i class="pencil alternate icon"></i></a>
+
+<table class="ui selectable celled table ">
+  <thead>
+    <tr>
+      <th>username</th>
+
+      <th class="right aligned"><%= currentUser.username %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Full-name</td>
+
+      <td class="right aligned"><%= currentUser.fullname %></td>
+    </tr>
+    <tr>
+      <td>Email-id</td>
+
+      <td class="right aligned"><%= currentUser.email %></td>
+    </tr>
+    <tr>
+      <td>mobile no.(paytm)</td>
+
+      <td class="right aligned"><%= currentUser.mobile %></td>
+    </tr>
+  </tbody>
+</table>
+ <a href="#">edit details</a>
+</div>
+<% include partials/footer %>

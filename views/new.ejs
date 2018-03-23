@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="container">
+
+<div style="
+padding-top:100px;
+margin:0 auto;">
+
+<div class="ui main text container segment">
+
+
+
+<form class="ui form" action="/blogs" method="post">
+  <div class="field">
+    <label>Start typing..</label>
+    <input name="blog[title]" placeholder="Write your Query " type="text">
+  </div>
+  <div class="field">
+    <label>Image Url (optional)</label>
+    <input name="blog[image]" placeholder="Image Url (optional)" type="text">
+  </div>
+  <div class="field">
+  
+    <textarea name="blog[body]" placeholder="description" type="text"></textarea>
+  </div>
+  <!-- <div class="field">
+    <div class="ui checkbox">
+      <input tabindex="0" class="hidden" type="checkbox">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div> -->
+  <button class="ui button" type="Submit!" href="/blogs">Submit</button>
+  <a href="/blogs">Go back</a>
+</form>
+</div>
+</div>
+</div>
+<% include partials/footer %>

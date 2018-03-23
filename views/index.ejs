@@ -1,0 +1,45 @@
+<% include partials/header %>
+
+
+
+<div style="
+padding-top:100px;
+margin:0 auto;">
+
+<div class="ui main text container segment" style="background:;">
+    <div class="ui huge header" ><h2><a href"/blogs/new">What's your Query??<a></h2></div>
+      <hr>
+
+<% blogs.forEach(function(blog){ %>
+
+
+<div class="ui container segment" style="background:;">
+  <div class="ui unstackable items" style="background:;">
+    <div class="item">
+      <div class="image">
+        <img src="<%=blog.image%>">
+      </div>
+      <div class="content">
+        <a class="header"><%=blog.title%></a>
+        <p>by-<%= blog.author.username %></p>
+        <div class="meta">
+          <span><%=blog.created.toDateString()%></span>
+        </div>
+
+       <a class="ui violet basic button" href="/blogs/<%=blog._id %>">View Answers!! <i class="caret right icon"></i></a>
+      </div>
+
+    </div>
+  
+ </div>
+<% }) %>
+</div>
+
+
+  </div>
+
+
+
+
+
+<% include partials/footer %>

@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<div class="container">
+
+<div style="
+padding-top:100px;
+margin:0 auto;">
+
+<div class="ui main text container segment">
+  <div class="ui huge header">Edit Post</div>
+<!-- ?_method=PUT  i.e. method over-riding to work this as put request -->
+
+<form class="ui form" action="/blogs/<%=blog._id%>?_method=PUT" method="post">
+  <div class="field">
+    <label>Post Name</label>
+    <input name="blog[title]" value="<%=blog.title%>" type="text">
+  </div>
+  <div class="field">
+    <label>Image Url</label>
+    <input name="blog[image]" value="<%=blog.image%>" type="text">
+  </div>
+  <div class="field">
+    <label>description</label>
+    <textarea name="blog[body]" placeholder="description" type="text"><%=blog.body%></textarea>
+  </div>
+  <!-- <div class="field">
+    <div class="ui checkbox">
+      <input tabindex="0" class="hidden" type="checkbox">
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </div> -->
+  <button class="ui button" type="Submit!" href="/blogs">Submit</button>
+  <a href="/blogs">Go back</a>
+</form>
+</div>
+</div>
+</div>
+<% include partials/footer %>

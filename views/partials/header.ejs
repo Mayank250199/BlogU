@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
+    <!-- using semantic ui -->
+  </head>
+  <body style="
+	background: ;">
+    <div class="ui fixed inverted menu">
+      <div class="ui container">
+        <div class="header item"><i class="columns icon"></i>BlogU</div>
+        <a href="/" class="item">Home</a>
+
+        <div class="item">
+    <div class="ui icon input">
+      <input placeholder="Search..." type="text">
+      <i class="search icon"></i>
+    </div>
+  </div>
+    <a href="/blogs/new" class="right item">Ask Question</a>
+           <% if(!currentUser){ %>
+                 <a href="/blogs/login" class="item">Login</a>
+                 <a href="/blogs/signup" class="item">Sign Up</a>
+                     <% } else { %>
+                         <a href="/blogs/person" class="item">Signed In As <%= currentUser.username %></a>
+                          <a href="/blogs/logout" class="item">Logout</a>
+                     <% } %>
+      </div>
+
+    </div>
+
+
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+      <a class="item">
+        <i class="home icon"></i>
+        Home
+      </a>
+      <a class="item">
+        <i class="block layout icon"></i>
+        Topics
+      </a>
+      <a class="item">
+        <i class="smile icon"></i>
+        Friends
+      </a>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
