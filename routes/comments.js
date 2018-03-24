@@ -18,26 +18,38 @@ router.get("/new",middleware.isLoggedIn, function(req, res){
 });
 
 //Comments Create
-router.post("/b/:id",middleware.isLoggedIn,function(req, res){
+router.post("/",middleware.isLoggedIn,function(req, res){
    //lookup blog using ID
+   console.log("hello");
    Blog.findById(req.params.id, function(err, blog){
        if(err){
            console.log(err);
            res.redirect("/blogs");
        } else {
-        Comment.create(req.body.comment, function(err, comment){
+        Comment.create(req.body, function(err, comment){
            if(err){
+ console.log("test");
                console.log(err);
            } else {
                //add username and id to comment
+
                comment.author.id = req.user._id;
                comment.author.username = req.user.username;
                //save comment
                comment.save();
-console.log("hello");
-                  blog.comments.push(req.body.comment);
-               blog.save();
+
+                console.log(req.body.comment.text);
+                  //Blog.comments.push();
+                  Blog.findByIdAndUpdate(
+       { _id : req.params.id},
+       {$push: {comments  : {text: req.body.comment.text }}},
+       {safe: true, upsert: true},
+       function(err, model) {
+       console.log(err);
+       console.log("test3");
+});
                console.log(comment);
+
                res.redirect('/blogs/' + blog._id);
            }
         });
