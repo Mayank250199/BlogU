@@ -20,7 +20,7 @@ router.get("/new",middleware.isLoggedIn, function(req, res){
 //Comments Create
 router.post("/",middleware.isLoggedIn,function(req, res){
    //lookup blog using ID
-   console.log("hello");
+
    Blog.findById(req.params.id, function(err, blog){
        if(err){
            console.log(err);
@@ -38,11 +38,11 @@ router.post("/",middleware.isLoggedIn,function(req, res){
                //save comment
                comment.save();
 
-                console.log(req.body.comment.text);
+                console.log(req.user.username);
                   //Blog.comments.push();
-                  Blog.findByIdAndUpdate(
+      Blog.findByIdAndUpdate(
        { _id : req.params.id},
-       {$push: {comments  : {text: req.body.comment.text }}},
+       {$push: {comments  : {text: req.body.comment.text,author:comment.author}}},
        {safe: true, upsert: true},
        function(err, model) {
        console.log(err);
