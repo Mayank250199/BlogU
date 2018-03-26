@@ -1,11 +1,33 @@
 <% include partials/header %>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" style="
+        padding-top:100px;
+        margin:0 auto;">
+            <p class="lead">Related Queries.. </p>
+            <hr>
+            <div class="list-group">
+                <li class="list-group-item "><a href="#">question 1</a></li>
+                <li class="list-group-item "><a href="#">question 2</a></li>
+                <li class="list-group-item "><a href="#">question 3</a></li>
+                <li class="list-group-item "><a href="#">question 4</a></li>
+                <li class="list-group-item "><a href="#">question 5</a></li>
+                <li class="list-group-item "><a href="#">question 6</a></li>
+                <li class="list-group-item "><a href="#">question 7</a></li>
+                <li class="list-group-item "><a href="#">question 8</a></li>
+                <li class="list-group-item "><a href="#">question 9</a></li>
+                <li class="list-group-item "><a href="#">question 10</a></li>
+
+            </div>
+        </div>
+        <div class="col-md-9">
 <div style="
 padding-top:100px;
 margin:0 auto;">
 <div class="ui main text container segment">
   <div class="ui huge header"><%=blog.title%></div>
-    <p>by-<%= blog.author.username %></p>
+    <p><i class="user icon"></i><%= blog.author.username %></p>
   <div class="ui attached ">
     <div class="item">
       <img class="ui centered rounded image" src="<%=blog.image%>">
@@ -19,12 +41,46 @@ margin:0 auto;">
       </div>
     </div>
   </div>
-  <form  class="ui form" action="/blogs/<%=blog._id%>/edit" method="post">
-    <a  class="ui orange basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
-  </form>
-  <form class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="post">
-    <button class="ui red basic button">Delete</button>
-  </form>
+  <div class="pull-right">
+<div class="ui compact menu" style="margin:4px;">
+   <div class="ui simple dropdown item">
+   ...
+   <i class="dropdown icon"></i>
+   <div class="menu">
+     <form  class="ui form" action="/blogs/<%=blog._id%>/edit" method="post">
+       <a  class="ui  basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+     </form>
+     <form class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="post">
+       <button class="ui  basic button">Delete</button>
+     </form>
+  </div>
+   </div>
+  </div>
+   </div>
+   <hr>
+  <div class="pull-right">
+
+
+   <p>Share on-<button class="ui circular facebook icon button">
+  <i class="facebook icon"></i>
+</button>
+<button class="ui circular twitter icon button">
+  <i class="twitter icon"></i>
+</button>
+<button class="ui circular linkedin icon button">
+  <i class="linkedin icon"></i>
+</button>
+<button class="ui circular google plus icon button">
+  <i class="google plus icon"></i>
+</button></p>
+</div>
+<button class="ui left attached button">UpVote <i class="arrow alternate circle up icon"></i></button>
+<button class="right attached ui button">DownVote <i class="arrow alternate circle down icon"></i></button>
+
+<button class="ui button">Comment <i class="comment outline icon"></i></button>
+
+
+
 
 
 </div>
@@ -96,6 +152,10 @@ margin:0 auto;">
 
 </div>
 </div>
+
+</div>
+
+
 
 
 
