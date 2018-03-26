@@ -46,11 +46,42 @@ margin:0 auto;">
              <% blog.comments.forEach(function(comment){ %>
                  <div class="row">
                      <div class="col-md-12">
-                         <strong><%= comment.author.username %></strong>
-                         <span class="pull-right">10 days ago</span>
+                         <strong><i class="user icon"></i><%= comment.author.username %></strong>
+
+                         <div class="pull-right">
+
+
+                         <div class="ui compact menu" style="margin:4px;">
+                          <div class="ui simple dropdown item">
+                          ...
+                          <i class="dropdown icon"></i>
+                          <div class="menu">
+                          <div class="item">Edit</div>
+                          <div class="item">Delete</div>
+
+                             </div>
+                          </div>
+                         </div>
+                          </div>
+                           <span class="pull-right">10days</span>
+
                          <p>
                              <%= comment.text %>
+
                          </p>
+
+              <a  class="ui orange basic button" href="/#">223__<i class="smile icon"></i></a>
+                <a  class="ui orange basic button" href="/#">23__<i class="meh icon"></i></i></a>
+              <a  class="ui orange basic button" href="/#">10__<i class="frown icon"></i></a>
+
+              <div class="ui action input">
+                  <input type="text" value="" placeholder="Add Reply...">
+                  <button class="ui teal right labeled icon button">
+                  <i class="reply icon"></i>
+                  ..
+                  </button>
+                  </div>
+                         <hr>
 
                      </div>
                  </div>
@@ -69,13 +100,7 @@ margin:0 auto;">
 
 
 
-<!-- to be done with the authentication -->
-<!-- <form  class="ui form" action="/blogs/<%=blog._id%>/edit" method="post">
-  <a  class="ui orange basic button" href="/blogs/<%=blog._id%>/edit">Edit</a>
-</form>
-<form class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="post">
-  <button class="ui red basic button">Delete</button>
-</form> -->
+
 
 
 
