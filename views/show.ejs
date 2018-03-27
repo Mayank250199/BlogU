@@ -97,7 +97,9 @@ margin:0 auto;">
              <div class="text-right">
                  <a class="btn btn-success" href="/blogs/<%= blog._id %>/comment/new">Add your answer</a>
              </div>
-             <hr>
+             <hr style ="height: 12px;
+             border: 0;
+             box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);">
 
              <% blog.comments.forEach(function(comment){ %>
                  <div class="row">
@@ -121,11 +123,12 @@ margin:0 auto;">
                           </div>
                            <span class="pull-right">10days</span>
 
+                        <hr>
                          <p>
                              <%= comment.text %>
 
                          </p>
-
+                          <hr>
               <a  class="ui orange basic button" href="/#">223__<i class="smile icon"></i></a>
                 <a  class="ui orange basic button" href="/#">23__<i class="meh icon"></i></i></a>
               <a  class="ui orange basic button" href="/#">10__<i class="frown icon"></i></a>
@@ -137,7 +140,9 @@ margin:0 auto;">
                   ..
                   </button>
                   </div>
-                         <hr>
+                  <hr style ="height: 12px;
+                  border: 0;
+                  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);">
 
                      </div>
                  </div>
