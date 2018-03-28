@@ -43,18 +43,24 @@ margin:0 auto;">
              </div>
              <hr>
 
-             <% blog.comments.forEach(function(comment){ %>
+
                  <div class="row">
+
                      <div class="col-md-12">
+                       <% blog.comments.forEach(function(comment){ %>
+
                          <strong><%= comment.author.username %></strong>
-                         <span class="pull-right">10 days ago</span>
+                         <span class="pull-right"><%= comment.created.toDateString() %></span>
                          <p>
                              <%= comment.text %>
                          </p>
-
+    <% }) %>
                      </div>
+
                  </div>
-             <% }) %>
+
+
+
 
          </div>
 
