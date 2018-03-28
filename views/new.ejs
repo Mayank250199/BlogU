@@ -2,9 +2,7 @@
 
 <div class="container">
 
-<div style="
-padding-top:100px;
-margin:0 auto;">
+<div style="padding-top:100px;margin:0 auto;">
 
 <div class="ui main text container segment">
 
@@ -20,15 +18,22 @@ margin:0 auto;">
     <input name="blog[image]" placeholder="Image Url (optional)" type="text">
   </div>
   <div class="field">
-  
-    <textarea name="blog[body]" placeholder="description" type="text"></textarea>
+  <textarea name="blog[body]" placeholder="description" type="text"></textarea>
   </div>
-  <!-- <div class="field">
-    <div class="ui checkbox">
-      <input tabindex="0" class="hidden" type="checkbox">
-      <label>I agree to the Terms and Conditions</label>
-    </div>
-  </div> -->
+  <div class="field">
+    <select class="ui dropdown" name="blog[cat]">
+  <option value="">Select Category</option>
+  <option value="Education">Education</option>
+  <option value="Sports">Sports</option>
+    <option value="Movies">Movies</option>
+      <option value="Design">Design</option>
+        <option value="Fitness">Fitness</option>
+          <option value="Writing">Writing</option>
+            <option value="Songs">Songs</option>
+              <option value="Bollywood">Bollywood</option>
+                <option value="Music">Music</option>
+</select>
+  </div>
   <button class="ui button" type="Submit!" href="/blogs">Submit</button>
   <a href="/blogs">Go back</a>
 </form>
