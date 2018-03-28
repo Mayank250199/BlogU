@@ -74,7 +74,7 @@ app.get("/blogs/person/addedu",function (req,res) {
 app.delete("/blogs/:id",function (req,res) {
   Blog.findByIdAndRemove(req.params.id,function(err,updatedBlog) {
     if (err) {
-      res.redirect("/blogs");
+        res.redirect("/blogs");
     }else{
       res.redirect("/blogs");
     }
