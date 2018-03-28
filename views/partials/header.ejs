@@ -16,10 +16,13 @@
         <a href="/" class="item">Home</a>
 
         <div class="item">
-    <div class="ui icon input">
-      <input placeholder="Search..." type="text">
-      <i class="search icon"></i>
-    </div>
+          <form action="/blogs" method="GET" class="form-inline" >
+            <div class="ui icon input">
+              <input name="search" placeholder="Search..." type="text">
+               <i class="search icon"></i>
+            </div>
+          </form>
+
   </div>
     <a href="/blogs/new" class="right item">Ask Question</a>
            <% if(!currentUser){ %>

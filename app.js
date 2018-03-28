@@ -103,15 +103,26 @@ app.put("/blogs/:id",function (req,res) {
 });
 
 app.get("/blogs",function (req,res) {
-  Blog.find({},function(err, blogs){
-    if(err){
-      console.log(err);
-    }else{
-     res.render("index",{blogs:blogs});
-    }
-  });
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+    Blog.find({title:regex},function(err, blogs){
+      if(err){
+        console.log(err);
+      }else{
+       res.render("index",{blogs:blogs});
+      }
+    });
 
-});
+  } else {
+    Blog.find({},function(err, blogs){
+      if(err){
+        console.log(err);
+      }else{
+       res.render("index",{blogs:blogs});
+      }
+    });
+  }
+  });
 
 
 app.get("/blogs/new",middleware.isLoggedIn,function (req,res) {
@@ -165,7 +176,9 @@ app.get("/blogs/:id",function (req,res) {
 });
 
 
-
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 
 app.listen(3000,function(){
