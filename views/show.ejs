@@ -106,36 +106,37 @@ margin:0 auto;">
 
                      <div class="col-md-12">
 
-                       <% blog.comments.forEach(function(comment){ %>
 
-                         <strong><%= comment.author.username %></strong>
-                         <span class="pull-right"><%= comment.created.toDateString() %></span>
+
+
+<% blog.comments.forEach(function(comment){ %>
+<span class="pull-right"><%= comment.created.toDateString() %></span>
+<div class="pull-right">
+
+
+<div class="ui compact menu" style="margin:4px;">
+ <div class="ui simple dropdown item">
+
+ <i class="dropdown icon"></i>
+ <div class="menu">
+ <div class="item">Edit</div>
+ <div class="item">Delete</div>
+
+    </div>
+ </div>
+</div>
+ </div>
+  <span class="pull-right"></span>
+
 
                          <strong><i class="user icon"></i><%= comment.author.username %></strong>
-
-                         <div class="pull-right">
-
-
-                         <div class="ui compact menu" style="margin:4px;">
-                          <div class="ui simple dropdown item">
-                          ...
-                          <i class="dropdown icon"></i>
-                          <div class="menu">
-                          <div class="item">Edit</div>
-                          <div class="item">Delete</div>
-
-                             </div>
-                          </div>
-                         </div>
-                          </div>
-                           <span class="pull-right">10days</span>
-
-                        <hr>
-
                          <p>
                              <%= comment.text %>
 
                          </p>
+
+
+<hr />
 
     <% }) %>
 
