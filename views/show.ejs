@@ -45,9 +45,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div class="container">
     <div class="row">
         <div class="col-md-3" style="padding-top:100px;margin:0 auto;">
-            <p class="lead">Related Queries.. </p>
-            <hr>
-            <div class="list-group">
+
+            <div class="list-group" style="position:fixed;">
+              <p class="lead">Related Queries.. </p>
+
                 <li class="list-group-item "><a href="#">question 1</a></li>
                 <li class="list-group-item "><a href="#">question 2</a></li>
                 <li class="list-group-item "><a href="#">question 3</a></li>
@@ -61,7 +62,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-6">
 <div style="padding-top:100px;margin:0 auto;">
 <div class="ui main text container segment">
   <div class="ui huge header"><%=blog.title%></div>
