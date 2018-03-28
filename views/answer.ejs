@@ -1,0 +1,26 @@
+<% include partials/header %>
+<div class="container">
+    <div class="row">
+
+
+        <div style=" margin: 120px auto;">
+          <div class="ui main text container segment">
+          <h1 style="text-align: center">Add your answer!!</h1>
+          <h2 style="text-align: center"><%= blog.title %>??</h2>
+            <p>by-<%= blog.author.username %></p>
+            <form action="/answer" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="text" placeholder="text">
+                      <input class="form-control" type="text" name="text" placeholder="img link">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/blogs">Go Back</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<% include partials/footer %>
