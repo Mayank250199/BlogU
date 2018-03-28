@@ -1,42 +1,80 @@
 <% include partials/header %>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" style="padding-top:100px; margin:0 auto;">
+            <p class="lead">Feeds.. </p>
+            <hr>
+            <div class="list-group">
+              <li class="list-group-item active">Top-stories</li>
+              <li class="list-group-item">New Questions</li>
+              <li class="list-group-item">Sports</li>
+              <li class="list-group-item">Movies</li>
+              <li class="list-group-item">Design</li>
+              <li class="list-group-item">Education</li>
+              <li class="list-group-item">Writing</li>
+              <li class="list-group-item">Songs</li>
+              <li class="list-group-item">Fitness</li>
 
+            </div>
+        </div>
+<div class="col-md-9">
+<div style="padding-top:100px;margin:0 auto;">
 
-<div style="
-padding-top:100px;
-margin:0 auto;">
+<div class="ui container segment" style="background:;">
 
-<div class="ui main text container segment" style="background:;">
-    <div class="ui huge header" ><h2><a href"/blogs/new">What's your Query??<a></h2></div>
-      <hr>
+  <% if(!currentUser){ %>
+           <p><i class="user icon"></i>  New User</p>
+            <% } else { %>
+                <a href="/blogs/person" class="item"><i class="user circle icon"></i>  <%= currentUser.username %></a>
+              <% } %>
+            <h2><a href="/blogs/new"> What's your Query??</a></h2>
+  </div>
 
 <% blogs.forEach(function(blog){ %>
-
-
 <div class="ui container segment" style="background:;">
   <div class="ui unstackable items" style="background:;">
     <div class="item">
-      <div class="image">
-        <img src="<%=blog.image%>">
-      </div>
+
       <div class="content">
         <a class="header"><%=blog.title%></a>
-        <p>by-<%= blog.author.username %></p>
+        <p><i class="user icon"></i> <%= blog.author.username %></p>
         <div class="meta">
           <span><%=blog.created.toDateString()%></span>
         </div>
+        <div class="pull-right">
 
-       <a class="ui violet basic button" href="/blogs/<%=blog._id %>">View Answers!! <i class="caret right icon"></i></a>
+
+         <p>Share on-<button class="ui circular facebook icon button">
+        <i class="facebook icon"></i>
+      </button>
+      <button class="ui circular twitter icon button">
+        <i class="twitter icon"></i>
+      </button>
+      <button class="ui circular linkedin icon button">
+        <i class="linkedin icon"></i>
+      </button>
+      <button class="ui circular google plus icon button">
+        <i class="google plus icon"></i>
+      </button></p>
+      </div>
+       <a class="ui black basic button" href="/blogs/<%=blog._id %>">Answer   <i class="pencil alternate icon"></i> 8</a>
+       <a class="ui black basic button" href="/blogs/<%=blog._id %>">Follow   <i class="rss icon"></i>  56</a>
+       <hr>
+       <a href="#">More on this..  <i class="angle down icon"></i></a>
       </div>
 
     </div>
-  
+
  </div>
+  </div>
 <% }) %>
 </div>
 
 
   </div>
+    </div>
+      </div>
 
 
 
