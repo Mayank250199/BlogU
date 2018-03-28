@@ -113,7 +113,19 @@ app.get("/blogs",function (req,res) {
       }
     });
 
-  } else {
+  }
+  else if (req.query.link) {
+    const regex = new RegExp(escapeRegex(req.query.link), 'gi');
+    Blog.find({cat:regex},function(err, blogs){
+      if(err){
+        console.log(err);
+      }else{
+       res.render("index",{blogs:blogs});
+      }
+    });
+
+  }
+   else {
     Blog.find({},function(err, blogs){
       if(err){
         console.log(err);
