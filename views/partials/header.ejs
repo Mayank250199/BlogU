@@ -3,17 +3,24 @@
   <head>
     <title>BlogU</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+
 <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
     <!-- using semantic ui -->
   </head>
   <body style="background: #edeeef;">
     <div class="ui fixed inverted menu" style="background: #010026;">
       <div class="ui container">
         <div class="header item"><i class="columns icon"></i>BlogU</div>
-        <a href="/" class="item">Home</a>
+        <a href="/" class="item"><h4>Home</h4></a>
 
         <div class="item">
           <form action="/blogs" method="GET" class="form-inline" >
@@ -22,7 +29,12 @@
                <i class="search icon"></i>
             </div>
           </form>
+
         </div>
+
+        <a href="/" class="item"><h4><i class="ui pencil"></i>Answer</h4></a>
+          <a href="/" class="item"><h4>Notification</h4></a>
+
     <a href="/blogs/new" class="right item">Ask Question</a>
            <% if(!currentUser){ %>
                  <a href="/blogs/login" class="item">Login</a>
