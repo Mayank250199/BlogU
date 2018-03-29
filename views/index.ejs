@@ -61,16 +61,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: ;
+    color: black;
 }
 
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+    background-color:#e5e5e5 ;
+    color: black;
 }
 </style>
 <div class="container">
@@ -82,22 +82,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <div class="col-md-2" style="padding-top:100px; margin:0 auto; ">
 
 
-     <div style="position:fixed; " >
+     <div style="position: fixed; " >
 
        <p class="lead" style="background:; "><i class="angle double right icon"></i>Feeds.. </p>
        <div class="ui link list"  >
        <h4><div class="item" ><a href="/">Top Stories</a></div></h4>
 
-       <a class="item" href="/blogs?link=Sports" style="padding-top:10px;"><i class="table tennis icon"></i> Sports</a>
-       <a class="item" href="/blogs?link=Education" style="padding-top:8px;"><i class="book icon"></i>  Education</a>
-       <a class="item" href="/blogs?link=Music" style="padding-top:8px;"><i class="music icon"></i>  Music</a>
-       <a class="item" href="/blogs?link=Design" style="padding-top:8px;"><i class="paint brush icon"></i>  Design</a>
-       <a class="item" href="/blogs?link=Fitness" style="padding-top:8px;"><i class="universal access icon"></i>  Fitness</a>
-         <a class="item" href="/blogs?link=Writing" style="padding-top:8px;"><i class="pencil alternate icon"></i>  Writing</a>
-           <a class="item" href="/blogs?link=Bollywood" style="padding-top:8px;"><i class="film icon"></i>  Bollywood</a>
-             <a class="item" href="/blogs?link=Songs" style="padding-top:8px;"><i class="microphone icon"></i>  Songs</a>
-               <a class="item" href="/blogs?link=Movies" style="padding-top:8px;"><i class="video icon"></i>  Movies</a>
-               <a class="item" href="/blogs?link=Technology" style="padding-top:8px;"><i class="desktop icon"></i>  Technology</a>
+       <a class="item" href="/blogs?link=Sports"><i class="table tennis icon"></i> Sports</a>
+       <a class="item" href="/blogs?link=Education"><i class="book icon"></i>  Education</a>
+       <a class="item" href="/blogs?link=Music"><i class="music icon"></i>  Music</a>
+       <a class="item" href="/blogs?link=Design"><i class="paint brush icon"></i>  Design</a>
+       <a class="item" href="/blogs?link=Fitness"><i class="universal access icon"></i>  Fitness</a>
+         <a class="item" href="/blogs?link=Writing"><i class="pencil alternate icon"></i>  Writing</a>
+           <a class="item" href="/blogs?link=Bollywood"><i class="film icon"></i>  Bollywood</a>
+             <a class="item" href="/blogs?link=Songs"><i class="microphone icon"></i>  Songs</a>
+               <a class="item" href="/blogs?link=Movies"><i class="video icon"></i>  Movies</a>
+               <a class="item" href="/blogs?link=Technology"><i class="desktop icon"></i>  Technology</a>
        </div>
      </div>
 
@@ -117,7 +117,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <% } else { %>
                 <a href="/blogs/person" class="item"><i class="user circle icon"></i>  <%= currentUser.username %></a>
               <% } %>
-          <h2 >   <a id="myBtn">What's your Query??</a></h2>
+          <a href="#"><h2 id="myBtn"> What's your Query??</h2></a>  
   </div>
 
 
@@ -128,34 +128,30 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <!-- Modal content -->
     <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h3 style="text-align:center;padding:0px 0px 6px 0px;">Write Your Query!!</h3>
-      </div>
+
       <div class="modal-body">
 
-
+        <span class="close">&times;</span>
         <div style="">
 
         <div class="ui main text  ">
 
 
-<br />
+
         <form class="ui form" action="/blogs" method="post">
           <div class="field">
-            <label>Start typing..</label>
-            <input name="blog[title]" placeholder="Write your Query " type="text" required>
+            <label style="padding-top:8px;">Start typing..</label>
+            <input name="blog[title]" placeholder="Write your Query " type="text">
           </div>
           <div class="field">
             <label>Image Url (optional)</label>
             <input name="blog[image]" placeholder="Image Url (optional)" type="text">
           </div>
           <div class="field">
-            <label>Description</label>
-          <textarea name="blog[body]" placeholder="description" type="text" required></textarea>
+          <textarea name="blog[body]" placeholder="description" type="text"></textarea>
           </div>
-          <div class="field">
-            <select class="ui dropdown" name="blog[cat]" required>
+          <div class="field"style="padding-bottom:30px;">
+            <select class="ui dropdown" name="blog[cat]" >
           <option value="">Select Category</option>
           <option value="Education">Education</option>
           <option value="Sports">Sports</option>
@@ -169,18 +165,18 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <option value="Technology">Technology</option>
         </select>
           </div>
-<br />
 
 
+        </form>
         </div>
         </div>
         </div>
 
       <div class="modal-footer">
-        <button class="ui button" type="Submit!" >Submit</button>
-        <button class="ui button" ><a href="/blogs">Go back</a></button>
+        <a style="color:#a2a6ad; padding-right:15px;" href="/blogs">Cancel  </a>
+        <button class=" blue ui button" type="Submit!" style="padding-right:8px;">Submit</button>
+
       </div>
-      </form>
     </div>
 </div>
   </div>
@@ -221,12 +217,11 @@ window.onclick = function(event) {
 
       <div class="content">
         <p style="color:#a2a6ad;">Question added  :  <a href="#"><%=blog.cat%></a></p>
-        <hr />
-        <a class="header"><h2>&nbsp;&nbsp;<%=blog.title%></h2></a>
+        <a class="header"><%=blog.title%></a>
        <div class="pull-right">
       <a href="#"><h2><i class="user plus icon"></i></h2></a>
        </div>
-      <p style="padding-top:8px;padding-bottom:8px;">  <a href="/blogs/author/<%=blog._id%>" ><i class="user icon"></i> <%= blog.author.username %></a></p>
+      <p>  <a href="/blogs/author/<%=blog._id%>"><i class="user icon"></i> <%= blog.author.username %></a></p>
         <div class="meta">
           <span><%=blog.created.toDateString()%></span>
         </div>
