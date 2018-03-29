@@ -54,7 +54,7 @@ app.post("/blogs",function(req,res) {
   }
 Blog.create(req.body.blog,middleware.isLoggedIn,function (err,newBlog) {
     if(err){
-          res.render("new");
+          res.redirect('/blogs');
     }else{
      res.redirect('/blogs');
 
@@ -148,6 +148,16 @@ app.get("/blogs/logout", function(req, res){
 
 app.get("/blogs/signup",function (req,res) {
   res.render("signup");
+});
+app.get("/:id/comments",function (req,res) {
+  Comment.find({id:req.params.id},function(err, comments){
+    if(err){
+      console.log(err);
+    }else{
+     res.render("answer",{comments:comments});
+    }
+
+});
 });
 //handle sign up logic
 

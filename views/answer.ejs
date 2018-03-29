@@ -1,4 +1,4 @@
-<% include partials/header %>
+
 <div class="container">
     <div class="row">
 
@@ -6,8 +6,8 @@
         <div style=" margin: 120px auto;">
           <div class="ui main text container segment">
           <h1 style="text-align: center">Add your answer!!</h1>
-          <h2 style="text-align: center"><%= blog.title %>??</h2>
-            <p>by-<%= blog.author.username %></p>
+          <h2 style="text-align: center"><%= comments.author.username %>??</h2>
+            <p><%= comments.text %></p>
             <form action="/answer" method="POST">
                 <div class="form-group">
                     <input class="form-control" type="text" name="text" placeholder="text">

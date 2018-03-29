@@ -32,7 +32,7 @@ router.post("/",middleware.isLoggedIn,function(req, res){
                console.log(err);
            } else {
                //add username and id to comment
-
+               comment.text = req.body.comment.text;
                comment.author.id = req.user._id;
                comment.author.username = req.user.username;
                //save comment
