@@ -129,7 +129,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 padding-top:50px;
 margin:0 auto;">
 <div class="ui main text container segment">
-  <div class="ui huge header">Answers -</div>
+  <div class="ui huge header">Answers By-</div>
   <div class="ui attached ">
 
     <div class="well">
@@ -172,69 +172,26 @@ margin:0 auto;">
                          <p>
                           <%= comment.text %>
                          </p>
-<input type="text" placeholder="Search..">
-                         <!-- Trigger/Open The Modal -->
-                         <button id="myBtn">Open Modal</button>
 
-                         <!-- The Modal -->
-                         <div id="myModal" class="modal">
+                         <a  class="ui orange basic button" href="/#">223__<i class="smile icon"></i></a>
+                           <a  class="ui orange basic button" href="/#">23__<i class="meh icon"></i></i></a>
+                         <a  class="ui orange basic button" href="/#">10__<i class="frown icon"></i></a>
 
-                           <!-- Modal content -->
-                           <div class="modal-content">
-                             <span class="close">&times;</span>
-                             <p>Some text in the Modal..</p>
-                           </div>
-
-                         </div>
-                         <script>
-                         // Get the modal
-                         var modal = document.getElementById('myModal');
-
-                         // Get the button that opens the modal
-                         var btn = document.getElementById("myBtn");
-
-                         // Get the <span> element that closes the modal
-                         var span = document.getElementsByClassName("close")[0];
-
-                         // When the user clicks the button, open the modal
-                         btn.onclick = function() {
-                             modal.style.display = "block";
-                         }
-
-                         // When the user clicks on <span> (x), close the modal
-                         span.onclick = function() {
-                             modal.style.display = "none";
-                         }
-
-                         // When the user clicks anywhere outside of the modal, close it
-                         window.onclick = function(event) {
-                             if (event.target == modal) {
-                                 modal.style.display = "none";
-                             }
-                         }
-                         </script>
-
-                         <hr />
-
+                         <div class="ui action input">
+                           <form method="get" action="/<%= comment.id %>/comments">
+                             <input type="text" value="" placeholder="Add Reply...">
+                             <button class="ui teal right labeled icon button">
+                             <i class="reply icon"></i>
+                             ..
+                             </button>
+                             </div>
+                             <hr style ="height: 12px; border: 0;box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);">
+</form>
 
     <% }) %>
 
 
                           <hr>
-              <a  class="ui orange basic button" href="/#">223__<i class="smile icon"></i></a>
-                <a  class="ui orange basic button" href="/#">23__<i class="meh icon"></i></i></a>
-              <a  class="ui orange basic button" href="/#">10__<i class="frown icon"></i></a>
-
-              <div class="ui action input">
-                  <input type="text" value="" placeholder="Add Reply...">
-                  <button class="ui teal right labeled icon button">
-                  <i class="reply icon"></i>
-                  ..
-                  </button>
-                  </div>
-                  <hr style ="height: 12px;
-                  border: 0;
-                  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);">
 
 
                      </div>
