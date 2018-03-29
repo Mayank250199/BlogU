@@ -179,7 +179,20 @@ app.get("/:id/comments",function (req,res) {
 //handle sign up logic
 
 app.post("/blogs/signup", function(req, res){
-    var newUser = new User(req.body);
+    var newUser = new User(
+      {username: req.body.username,
+         fullname: req.body.fullname,
+          email: req.body.email,
+           mobile:req.body.mobile,
+           experience: req.body.experience,
+              company: req.body.company,
+               position: req.body.position,
+                school:req.body.school,
+                concentration:req.body.concentration,
+                secondaryc:req.body.secondaryc,
+                degree:req.body.degree,
+                graduation:req.body.graduation
+         });
 
     User.register(newUser, req.body.password, function(err, user){
         if(err){
