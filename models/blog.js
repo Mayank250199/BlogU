@@ -10,7 +10,11 @@ var blogSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
      },
-     username: String
+     username: String,
+     password: String,
+     fullname: String,
+     email: String,
+     mobile: String
   },
     created:{type:Date, default: Date.now},
   comments: [

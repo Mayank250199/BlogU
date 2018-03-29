@@ -186,6 +186,17 @@ app.get("/blogs/:id",function (req,res) {
   });
 
 });
+app.get("/blogs/author/:id",function (req,res) {
+  Blog.findById(req.params.id).populate("user").exec(function(err, foundblog){
+    if (err) {
+      console.log(err);
+    } else{
+      res.render("profview",{blog:foundblog});
+    }
+  });
+
+});
+
 
 
 function escapeRegex(text) {

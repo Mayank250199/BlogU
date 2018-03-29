@@ -22,14 +22,13 @@
                <i class="search icon"></i>
             </div>
           </form>
-
-  </div>
+        </div>
     <a href="/blogs/new" class="right item">Ask Question</a>
            <% if(!currentUser){ %>
                  <a href="/blogs/login" class="item">Login</a>
                  <a href="/blogs/signup" class="item">Sign Up</a>
                      <% } else { %>
-                         <a href="/blogs/person" class="item">Signed In As <%= currentUser.username %></a>
+                         <a href="/blogs/person" class="item"> <%= currentUser.username %></a>
                           <a href="/blogs/logout" class="item">Logout</a>
                      <% } %>
       </div>
