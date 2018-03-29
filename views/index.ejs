@@ -130,7 +130,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <div class="modal-content">
       <div class="modal-header">
         <span class="close">&times;</span>
-        Questions
+        <h3 style="text-align:center;padding:0px 0px 6px 0px;">Write Your Query!!</h3>
       </div>
       <div class="modal-body">
 
@@ -140,21 +140,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <div class="ui main text  ">
 
 
-
+<br />
         <form class="ui form" action="/blogs" method="post">
           <div class="field">
             <label>Start typing..</label>
-            <input name="blog[title]" placeholder="Write your Query " type="text">
+            <input name="blog[title]" placeholder="Write your Query " type="text" required>
           </div>
           <div class="field">
             <label>Image Url (optional)</label>
             <input name="blog[image]" placeholder="Image Url (optional)" type="text">
           </div>
           <div class="field">
-          <textarea name="blog[body]" placeholder="description" type="text"></textarea>
+            <label>Description</label>
+          <textarea name="blog[body]" placeholder="description" type="text" required></textarea>
           </div>
           <div class="field">
-            <select class="ui dropdown" name="blog[cat]">
+            <select class="ui dropdown" name="blog[cat]" required>
           <option value="">Select Category</option>
           <option value="Education">Education</option>
           <option value="Sports">Sports</option>
@@ -168,16 +169,18 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <option value="Technology">Technology</option>
         </select>
           </div>
-          <button class="ui button" type="Submit!" >Submit</button>
+<br />
 
-        </form>
+
         </div>
         </div>
         </div>
 
       <div class="modal-footer">
+        <button class="ui button" type="Submit!" >Submit</button>
         <button class="ui button" ><a href="/blogs">Go back</a></button>
       </div>
+      </form>
     </div>
 </div>
   </div>
@@ -219,7 +222,7 @@ window.onclick = function(event) {
       <div class="content">
         <p style="color:#a2a6ad;">Question added  :  <a href="#"><%=blog.cat%></a></p>
         <hr />
-        <a class="header">&nbsp;&nbsp;<%=blog.title%></a>
+        <a class="header"><h2>&nbsp;&nbsp;<%=blog.title%></h2></a>
        <div class="pull-right">
       <a href="#"><h2><i class="user plus icon"></i></h2></a>
        </div>

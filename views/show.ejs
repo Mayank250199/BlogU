@@ -191,7 +191,7 @@ margin:0 auto;">
 
 
 
-
+<!-- Modal ADD Answer -->
                        <!-- The Modal -->
                        <div id="myModal" class="modal">
 
@@ -200,19 +200,14 @@ margin:0 auto;">
                          <div class="modal-content">
                            <div class="modal-header">
                              <span class="close">&times;</span>
-                             Answer
+                           <h2 style="text-align:center;padding:0px 0px 3px 0px;">Add your answer!!</h2>
+
                            </div>
                            <div class="modal-body">
 
-
-                             <!-- Modal ADD Answer -->
-
-                                 <div class="row">
-
-
                                      <div style=" ">
                                        <div class="ui main text ">
-                                       <h1 style="text-align: center">Add your answer!!</h1>
+
                                        <h2 style="text-align: center"><%= blog.title %>??</h2>
                                          <p>by-<%= blog.author.username %></p>
                                          <form action="/blogs/<%= blog._id %>/comment" method="POST">
@@ -223,13 +218,13 @@ margin:0 auto;">
                                                  <button class="btn btn-primary btn-block">Submit!</button>
                                              </div>
                                          </form>
-                                         <a href="/blogs">Go Back</a>
+
                                      </div>
                                  </div>
                              </div>
 
 
-                             </div>
+
                              </div>
 
 
