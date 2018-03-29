@@ -5,6 +5,7 @@ var blogSchema = new mongoose.Schema({
   image: String,
   body: String,
   cat: String,
+  followers:String,
   author: {
      id: {
         type: mongoose.Schema.Types.ObjectId,
@@ -13,7 +14,9 @@ var blogSchema = new mongoose.Schema({
      username: String,
      fullname: String,
      email: String,
-     mobile: String
+     mobile: String,
+     followers: String,
+     following: String
   },
     created:{type:Date, default: Date.now},
   comments: [

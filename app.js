@@ -53,7 +53,9 @@ app.post("/blogs",function(req,res) {
     username: req.user.username,
     email: req.user.email,
     mobile: req.user.mobile,
-    fullname: req.user.fullname
+    fullname: req.user.fullname,
+    followers: req.user.followers,
+    following: req.user.following
   }
 Blog.create(req.body.blog,middleware.isLoggedIn,function (err,newBlog) {
     if(err){
