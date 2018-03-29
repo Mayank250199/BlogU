@@ -11,7 +11,6 @@ var blogSchema = new mongoose.Schema({
         ref: "User"
      },
      username: String,
-     password: String,
      fullname: String,
      email: String,
      mobile: String
