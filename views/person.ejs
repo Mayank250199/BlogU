@@ -1,5 +1,95 @@
 <% include partials/header %>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: ;
+    color: ;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+</style>
 
 <div style="padding-top:100px;margin:0 auto;">
 </div>
@@ -15,38 +105,203 @@
     Follow
   </button>
   Followers 5   |  Following 2</p>
-  <a href="/blogs/person/addjob">add job credentials <i class="briefcase icon"></i></a>
+  <a id="myBtn">add job credentials <i class="briefcase icon"></i></a>
   <hr>
-  <a href="/blogs/person/addedu">add educational credentials <i class="pencil alternate icon"></i></a>
+  <a id="myBtn2">add educational credentials <i class="pencil alternate icon"></i></a>
 
-<table class="ui selectable celled table ">
-  <thead>
-    <tr>
-      <th>username</th>
+  <table class="ui selectable celled table ">
+    <thead>
+      <tr>
+        <th>username</th>
 
-      <th class="right aligned"><%= currentUser.username %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Full-name</td>
+        <th class="right aligned"><%= currentUser.username %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Full-name</td>
 
-      <td class="right aligned"><%= currentUser.fullname %></td>
-    </tr>
-    <tr>
-      <td>Email-id</td>
+        <td class="right aligned"><%= currentUser.fullname %></td>
+      </tr>
+      <tr>
+        <td>Email-id</td>
 
-      <td class="right aligned"><%= currentUser.email %></td>
-    </tr>
-    <tr>
-      <td>mobile no.(paytm)</td>
+        <td class="right aligned"><%= currentUser.email %></td>
+      </tr>
+      <tr>
+        <td>mobile no.(paytm)</td>
 
-      <td class="right aligned"><%= currentUser.mobile %></td>
-    </tr>
-  </tbody>
-</table>
- <a href="#">edit details</a>
-</div>
+        <td class="right aligned"><%= currentUser.mobile %></td>
+      </tr>
+    </tbody>
+  </table>
+   <a href="#">edit details</a>
+  </div>
+
+  <!-- Modal credential -->
+                         <!-- The Modal -->
+                         <div id="myModal" class="modal">
+
+                           <!-- Modal content -->
+                           <div class="modal-dialog modal-dialog-centered">
+                           <div class="modal-content">
+                             <div class="modal-header">
+                               <span class="close">&times;</span>
+
+                               <h1 style="text-align: center"> Edit credentials</h1>
+                             </div>
+                             <div class="modal-body">
+
+
+                               <p style="text-align: center">Credentials also appear on answers you write</p>
+                               <div style="width: 50%; margin: 25px auto;">
+                                 <div class="well" style="width: 100%; margin: 5px auto;">
+                                   <form action="/blogs/signup" method="PUT">
+                                   <p><i class="briefcase icon"></i> Add employment credential</p>
+                                   <div class="form-group">
+                           <label>Position</label>
+                           <input class="form-control" type="text" name="position" placeholder="ex.Chef..">
+                         </div>
+                         <div class="form-group">
+                           <label>Company/Organization</label>
+                           <input class="form-control" type="text" name="company" placeholder="ex.Google">
+                         </div>
+                         <div class="form-group">
+                           <label>Experience (in months)</label>
+                           <input class="form-control" type="text" name="experience" placeholder="ex.14">
+                         </div>
+                         <div class="form-group">
+                             <button class="btn btn-lg btn-primary btn-block">save</button>
+                         </div>
+                         </form>
+
+                       <a href="/blogs/person">cancel</a>
+
+                               </div>
+                           </div>
+                               </div>
+
+
+
+                               </div>
+
+
+                           </div>
+                         </div>
+
+
+                         <!-- The Modal2 -->
+                         <div id="myModal2" class="modal">
+
+                           <!-- Modal content -->
+                           <div class="modal-dialog modal-dialog-centered">
+                           <div class="modal-content">
+                             <div class="modal-header">
+                               <span2 class="close">&times;</span2>
+
+                               <h1 style="text-align: center"> Edit credentials</h1>
+                             </div>
+                             <div class="modal-body">
+
+
+
+                               <p style="text-align: center">Credentials also appear on answers you write</p>
+                               <div style="width: 50%; margin: 25px auto;">
+                                 <div class="well" style="width: 100%; margin: 5px auto;">
+                                   <form action="/blogs/signup/" method="PUT">
+                                   <p><i class="pencil alternate icon"> </i> Add education credential</p>
+                                   <div class="form-group">
+                           <label>School</label>
+                           <input class="form-control" type="text" name="school" placeholder="ex.University of Oxford">
+                         </div>
+                         <div class="form-group">
+                           <label>Concentration</label>
+                           <input class="form-control" type="text" name="concentration" placeholder="ex.Economics">
+                         </div>
+                         <div class="form-group">
+                           <label>Secondary Concentration</label>
+                           <input class="form-control" type="text" name="secondaryc" placeholder="ex.Global Policy">
+                         </div>
+                         <div class="form-group">
+                           <label>Degree Type</label>
+                           <input class="form-control" type="text" name="degree" placeholder="ex. B.A.">
+                         </div>
+                         <div class="form-group">
+                           <label>Graduation year</label>
+                           <input class="form-control" type="text" name="graduation" placeholder="ex. 2016">
+                         </div>
+                         <div class="form-group">
+                             <button class="btn btn-lg btn-primary btn-block">save</button>
+                         </div>
+                         </form>
+
+
+
+
+
+                                   <a href="/blogs/person">cancel</a>
+
+                               </div>
+                           </div>
+
+
+
+                               </div>
+
+
+                           </div>
+                         </div>
+
+                         <script>
+                       // Get the modal
+                       var modal = document.getElementById('myModal');
+
+                       // Get the button that opens the modal
+                       var btn = document.getElementById("myBtn");
+
+                       // Get the <span> element that closes the modal
+                       var span = document.getElementsByClassName("close")[0];
+
+                       // When the user clicks the button, open the modal
+                       btn.onclick = function() {
+                           modal.style.display = "block";
+                       }
+
+                       // When the user clicks on <span> (x), close the modal
+                       span.onclick = function() {
+                           modal.style.display = "none";
+                       }
+
+                       // Get the modal2
+                       var modal2 = document.getElementById('myModal2');
+
+                       // Get the button that opens the modal2
+                       var btn2 = document.getElementById("myBtn2");
+
+                       // Get the <span> element that closes the modal
+                       var span2 = document.getElementsByClassName("close")[0];
+
+
+                       // When the user clicks the button, open the modal
+                       btn2.onclick = function() {
+                           modal2.style.display = "block";
+                       }
+
+                       // When the user clicks on <span> (x), close the modal
+                       span2.onclick = function() {
+                           modal2.style.display = "none";
+                       }
+
+
+                       // When the user clicks anywhere outside of the modal, close it
+                       window.onclick = function(event) {
+                           if (event.target == modal) {
+                               modal.style.display = "none";
+                           }
+                       }
+                       </script>
+
+
 
 
 
