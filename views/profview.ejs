@@ -1,5 +1,42 @@
-<h1>heloo</h1>
-<p><%= blog.author.fullname %></p>
-  <p><i class="user icon"></i><%= blog.author.username %></p>
-<p><%= blog.author.email %></p>
-<p><%= blog.author.mobile %></p>
+
+<% include partials/header %>
+
+
+<div style="padding-top:100px;margin:0 auto;">
+</div>
+<div class="ui main text container segment">
+  <div class="ui huge header" ><h2>  <%= currentUser.username %></h2></div>
+<p style="color:#a2a6ad;">
+  <button class="ui basic button">
+   <i class="user plus icon"></i>
+  Follow
+</button>
+Followers 5   |  Following 2</p>
+
+
+
+<table class="ui selectable celled table ">
+  <thead>
+    <tr>
+      <th>username</th>
+
+      <th class="right aligned"><%= blog.author.username %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Full-name</td>
+
+      <td class="right aligned"><%= blog.author.fullname %></td>
+    </tr>
+    <tr>
+      <td>Email-id</td>
+
+      <td class="right aligned"><%= blog.author.email %></td>
+    </tr>
+
+  </tbody>
+</table>
+ <a href="#">edit details</a>
+</div>
+<% include partials/footer %>
