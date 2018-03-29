@@ -66,7 +66,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div style="padding-top:100px;margin:0 auto;">
 <div class="ui main text container segment">
   <div class="ui huge header"><%=blog.title%></div>
-    <p><i class="user icon"></i><%= blog.author.username %></p>
+    <p><a href="/blogs/author/<%=blog._id%>"><i class="user icon"></i><%= blog.author.username %></a></p>
   <div class="ui attached ">
     <div class="item">
       <img class="ui centered rounded image" src="<%=blog.image%>">

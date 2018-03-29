@@ -179,7 +179,8 @@ app.get("/:id/comments",function (req,res) {
 //handle sign up logic
 
 app.post("/blogs/signup", function(req, res){
-    var newUser = new User({username: req.body.username, fullname: req.body.fullname, email: req.body.email, mobile:req.body.mobile});
+    var newUser = new User(req.body);
+
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             console.log(err);

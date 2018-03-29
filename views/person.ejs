@@ -5,6 +5,10 @@
 </div>
 <div class="ui main text container segment">
   <div class="ui huge header" ><h2>-<%= currentUser.username %></h2></div>
+  <p><%= currentUser.position %></p>
+  <p><%= currentUser.experience %></p>
+  <p><%= currentUser.company %></p>
+  <p><%= currentUser.school %></p>
   <p style="color:#a2a6ad;">
     <button class="ui basic button">
      <i class="user plus icon"></i>
@@ -43,4 +47,8 @@
 </table>
  <a href="#">edit details</a>
 </div>
+
+
+
+
 <% include partials/footer %>

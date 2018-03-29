@@ -9,27 +9,27 @@
         <p style="text-align: center">Credentials also appear on answers you write</p>
         <div style="width: 50%; margin: 25px auto;">
           <div class="well" style="width: 100%; margin: 5px auto;">
-            <form action="/blogs/signup" method="POST">
+            <form action="/blogs/signup/<%=user._id%>?_method=PUT" method="PUT">
             <p><i class="pencil alternate icon"> </i> Add education credential</p>
             <div class="form-group">
     <label>School</label>
-    <input class="form-control" type="text" name="position" placeholder="ex.University of Oxford">
+    <input class="form-control" type="text" name="school" placeholder="ex.University of Oxford">
   </div>
   <div class="form-group">
     <label>Concentration</label>
-    <input class="form-control" type="text" name="company" placeholder="ex.Economics">
+    <input class="form-control" type="text" name="concentration" placeholder="ex.Economics">
   </div>
   <div class="form-group">
     <label>Secondary Concentration</label>
-    <input class="form-control" type="text" name="experience" placeholder="ex.Global Policy">
+    <input class="form-control" type="text" name="secondaryc" placeholder="ex.Global Policy">
   </div>
   <div class="form-group">
     <label>Degree Type</label>
-    <input class="form-control" type="text" name="experience" placeholder="ex. B.A.">
+    <input class="form-control" type="text" name="degree" placeholder="ex. B.A.">
   </div>
   <div class="form-group">
     <label>Graduation year</label>
-    <input class="form-control" type="text" name="experience" placeholder="ex. 2016">
+    <input class="form-control" type="text" name="graduation" placeholder="ex. 2016">
   </div>
   <div class="form-group">
       <button class="btn btn-lg btn-primary btn-block">save</button>

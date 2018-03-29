@@ -6,7 +6,19 @@ var UserSchema = new mongoose.Schema({
     password: String,
     fullname: String,
     email: String,
-    mobile: String
+    mobile: String,
+    followers: String,
+    following: String,
+    experience: String,
+    company: String,
+    position: String,
+    school: String,
+    concentration: String,
+    secondaryc: String,
+    degree: String,
+    graduation: String
+
+
 });
 
 UserSchema.plugin(passportLocalMongoose)
