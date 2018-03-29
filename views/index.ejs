@@ -218,11 +218,12 @@ window.onclick = function(event) {
 
       <div class="content">
         <p style="color:#a2a6ad;">Question added  :  <a href="#"><%=blog.cat%></a></p>
-        <a class="header"><%=blog.title%></a>
+        <hr />
+        <a class="header">&nbsp;&nbsp;<%=blog.title%></a>
        <div class="pull-right">
       <a href="#"><h2><i class="user plus icon"></i></h2></a>
        </div>
-      <p>  <a href="/blogs/author/<%=blog._id%>"><i class="user icon"></i> <%= blog.author.username %></a></p>
+      <p style="padding-top:8px;padding-bottom:8px;">  <a href="/blogs/author/<%=blog._id%>" ><i class="user icon"></i> <%= blog.author.username %></a></p>
         <div class="meta">
           <span><%=blog.created.toDateString()%></span>
         </div>
