@@ -51,9 +51,9 @@ app.post("/blogs",function(req,res) {
   req.body.blog.author = {
     id: req.user._id,
     username: req.user.username,
-    username: req.user.email,
-    username: req.user.mobile,
-    username: req.user.fullname
+    email: req.user.email,
+    mobile: req.user.mobile,
+    fullname: req.user.fullname
   }
 Blog.create(req.body.blog,middleware.isLoggedIn,function (err,newBlog) {
     if(err){
@@ -200,7 +200,7 @@ app.get("/blogs/:id",function (req,res) {
 
 });
 app.get("/blogs/author/:id",function (req,res) {
-  Blog.findById(req.params.id).populate("user").exec(function(err, foundblog){
+  Blog.findById(req.params.id).populate("").exec(function(err, foundblog){
     if (err) {
       console.log(err);
     } else{
