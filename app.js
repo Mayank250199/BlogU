@@ -205,6 +205,17 @@ app.post("/blogs/signup", function(req, res){
     });
 });
 
+app.put("/blogs/person",function (req,res) {
+  console.log("1step")
+  User.findByIdAndUpdate(req.params.id,req.body.user,function(err,updatedBlog) {
+    if (err) {
+      res.redirect("/blogs/person");
+    }else{
+      res.redirect("/blogs/person");
+    }
+  });
+});
+
 app.get("/blogs/:id",function (req,res) {
   Blog.findById(req.params.id).populate("comments").exec(function(err, foundblog){
     if (err) {
