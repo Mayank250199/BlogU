@@ -117,11 +117,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
             <% } else { %>
                 <a href="/blogs/person" class="item"><i class="user circle icon"></i>  <%= currentUser.username %></a>
               <% } %>
-          <a href="#"><h2 id="myBtn"> What's your Query??</h2></a>  
+
+        <% if(!currentUser){ %>
+              <a href="/blogs/login"><h2 id="myBtn"> What's your Query??</h2></a>
+                <% } else { %>
+          <a href="#"><h2 id="myBtn"> What's your Query??</h2></a>
+            <% } %>
   </div>
 
 
-
+<% if(currentUser){ %>
   <!-- The Modal -->
   <div id="myModal" class="modal">
 
@@ -180,7 +185,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     </div>
 </div>
   </div>
-
+<% } %>
   <script>
 // Get the modal
 var modal = document.getElementById('myModal');
