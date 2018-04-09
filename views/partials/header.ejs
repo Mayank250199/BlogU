@@ -35,12 +35,12 @@
         <a href="/" class="item"><h4><i class="ui pencil"></i>Answer</h4></a>
           <a href="/" class="item"><h4>Notification</h4></a>
 
-
+    <a href="/blogs/new" class="right item">Ask Question</a>
            <% if(!currentUser){ %>
-                 <a href="/blogs/login" class="right item">Login</a>
+                 <a href="/blogs/login" class="item">Login</a>
                  <a href="/blogs/signup" class="item">Sign Up</a>
                      <% } else { %>
-                         <a href="/blogs/person" class="right item"> <%= currentUser.username %></a>
+                         <a href="/blogs/person" class="item"> <%= currentUser.username %></a>
                           <a href="/blogs/logout" class="item">Logout</a>
                      <% } %>
       </div>
