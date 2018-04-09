@@ -9,8 +9,9 @@
         <p style="text-align: center">Credentials also appear on answers you write</p>
         <div style="width: 50%; margin: 25px auto;">
           <div class="well" style="width: 100%; margin: 5px auto;">
-            <form action="/blogs/person?_method=PUT" method="put">
+
             <p><i class="pencil alternate icon"> </i> Add education credential</p>
+            <form action="/blogs/person/<%=currentUser._id%>?_method=PUT" method="post">
             <div class="form-group">
     <label>School</label>
     <input class="form-control" type="text" name="school" placeholder="ex.University of Oxford">

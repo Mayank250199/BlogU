@@ -5,7 +5,7 @@ var express = require("express"),
     methodOverride = require("method-override")
     passport    = require("passport"),
     LocalStrategy = require("passport-local"),
-    Blog     = require("./models/blog"), 
+    Blog     = require("./models/blog"),
     User        = require("./models/user"),
     Comment     = require("./models/comment"),
     middleware = require("./middleware");
@@ -205,9 +205,9 @@ app.post("/blogs/signup", function(req, res){
     });
 });
 
-app.put("/blogs/person",function (req,res) {
+app.put("/blogs/person/:id",function (req,res) {
   console.log("1step")
-  User.findByIdAndUpdate(req.params.id,req.body.user,function(err,updatedBlog) {
+  User.findByIdAndUpdate(req.params.id,req.body.user,function(err,updatedUser) {
     if (err) {
       res.redirect("/blogs/person");
     }else{
