@@ -115,7 +115,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div style="padding-top:100px;margin:0 auto;">
 <div class="ui main text container segment">
   <div class="ui huge header"><%=blog.title%></div>
-    <p><a href="/blogs/author/<%=blog._id%>"><i class="user icon"></i><%= blog.author.username %></a></p>
+    <p><a href="/blogs/author/<%=blog._id%>"><img class="ui mini circular image" src="https://files.myglamm.com/images/static/no_user_yellow.png"><%= blog.author.username %></a></p>
   <div class="ui attached ">
     <div class="item">
       <img class="ui centered rounded image" src="<%=blog.image%>">
@@ -276,7 +276,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                          </div>
                           </div>
                            <span class="pull-right"><%= comment.created.toDateString() %></span>
-                         <strong><i class="user icon"></i><%= comment.author.username %></strong>
+                         <strong><img class="ui mini circular image" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDk1ZmU0NGYtMzQ2Yi00N2NjLTkyNWEtZWE2NTU4NTJiZGUzXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UY317_CR4,0,214,317_AL_.jpg"><%= comment.author.username %></strong>
 
                          <p>
                           <%= comment.text %>

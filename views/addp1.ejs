@@ -10,8 +10,9 @@
         <div style="width: 50%; margin: 25px auto;">
           <div class="well" style="width: 100%; margin: 5px auto;">
             <!-- ?_method=PUT  i.e. method over-riding to work this as put request -->
-            <form action="/blogs/person?_method=PUT" method="put">
+
             <p><i class="briefcase icon"></i> Add employment credential</p>
+            <form action="/blogs/person/<%=currentUser._id%>?_method=PUT" method="post">
             <div class="form-group">
     <label>Position</label>
     <input class="form-control" type="text" name="position" placeholder="ex.Chef..">

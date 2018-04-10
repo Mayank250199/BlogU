@@ -93,8 +93,36 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 <div style="padding-top:100px;margin:0 auto;">
 </div>
+<div class="row">
+
+
+<div class="col-md-2" style="padding-left:100px; margin:0 auto; ">
+
+
+<div style="position: fixed; " >
+
+<p class="lead" style="background:; "><i class="angle double right icon"></i>Feeds.. </p>
+<div class="ui link list"  >
+<h4><div class="item" ><a href="/">Top Stories</a></div></h4>
+
+<a class="item">Answers  0</a>
+<a class="item">Questions  0</a>
+<a class="item">Followers  0</a>
+<a class="item">Following  0</a>
+
+</div>
+</div>
+
+
+
+</div>
+
+<div class="col-md-8">
 <div class="ui main text container segment">
-  <div class="ui huge header" ><h2>-<%= currentUser.username %></h2></div>
+  <img class="ui small bordered image" style="display: block; margin-left: auto; margin-right: auto;" src="https://files.myglamm.com/images/static/no_user_yellow.png" >
+  <div class="ui huge header" style="text-align:center;" ><h1><%= currentUser.fullname %></h1></div>
+  
+  <hr>
   <p><%= currentUser.position %></p>
   <p><%= currentUser.experience %></p>
   <p><%= currentUser.company %></p>
@@ -245,7 +273,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                            </div>
 
 
-
+                                                   </div>
+                        </div>
                                </div>
 
 
