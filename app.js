@@ -49,7 +49,7 @@ app.get("/",function (req,res) {
 });
 
 
-<<<<<<< HEAD
+
 app.get("/blogs/new",middleware.isLoggedIn,function (req,res) {
   res.render("new.ejs");
 });
@@ -145,10 +145,6 @@ app.get("/blogs/author/:id",function (req,res) {
   });
 
 });
-=======
->>>>>>> 1788281c78fd509abdc99fcec2d26ccd87d623e2
-
-
 
 
 
