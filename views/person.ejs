@@ -121,7 +121,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <div class="ui main text container segment">
   <img class="ui small bordered image" style="display: block; margin-left: auto; margin-right: auto;" src="https://files.myglamm.com/images/static/no_user_yellow.png" >
   <div class="ui huge header" style="text-align:center;" ><h1><%= currentUser.fullname %></h1></div>
-  
+
   <hr>
   <p><%= currentUser.position %></p>
   <p><%= currentUser.experience %></p>
@@ -184,7 +184,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                <p style="text-align: center">Credentials also appear on answers you write</p>
                                <div style="width: 50%; margin: 25px auto;">
                                  <div class="well" style="width: 100%; margin: 5px auto;">
-                                   <form action="/blogs/signup" method="PUT">
+                                     <form action="/blogs/person/<%=currentUser._id%>?_method=PUT" method="post">
                                    <p><i class="briefcase icon"></i> Add employment credential</p>
                                    <div class="form-group">
                            <label>Position</label>
@@ -236,7 +236,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                                <p style="text-align: center">Credentials also appear on answers you write</p>
                                <div style="width: 50%; margin: 25px auto;">
                                  <div class="well" style="width: 100%; margin: 5px auto;">
-                                   <form action="/blogs/signup/" method="PUT">
+                                     <form action="/blogs/person/<%=currentUser._id%>?_method=PUT" method="post">
                                    <p><i class="pencil alternate icon"> </i> Add education credential</p>
                                    <div class="form-group">
                            <label>School</label>

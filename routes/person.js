@@ -7,9 +7,7 @@ var middleware = require("../middleware");
 
 
 
-
-
-router.get("/",function (req,res) {
+router.get("/person",function (req,res) {
   res.render("person.ejs");
 });
 router.get("/addjob",function (req,res) {
