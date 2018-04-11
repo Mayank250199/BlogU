@@ -5,7 +5,27 @@ var User = require("../models/user");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 
+//profile routes
+router.get("/person",function (req,res) {
+  res.render("person.ejs");
+});
+router.get("/person/addjob",function (req,res) {
+  res.render("addp1.ejs");
+});
+router.get("/person/addedu",function (req,res) {
+  res.render("addp2.ejs");
+});
 
+router.put("/person/:id",function (req,res) {
+  console.log("1step")
+  User.findByIdAndUpdate(req.params.id,req.body.user,function(err,updatedUser) {
+    if (err) {
+      res.redirect("/blogs/person");
+    }else{
+      res.redirect("/blogs/person");
+    }
+  });
+});
 
 router.get("/",function (req,res) {
   if (req.query.search) {

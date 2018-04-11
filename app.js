@@ -11,7 +11,6 @@ var express = require("express"),
     middleware = require("./middleware"),
   commentRoutes    = require("./routes/comments"),
     blogRoutes    = require("./routes/blogs"),
-    personRoutes    = require("./routes/person"),
     indexRoutes    = require("./routes/index");
 
 mongoose.connect("mongodb://blogu:blogu@ds123259.mlab.com:23259/blogu", {useMongoClient: true});
@@ -41,7 +40,6 @@ app.use(function(req, res, next){
 
 app.use("/", indexRoutes);
 app.use("/blogs", blogRoutes);
-app.use("/blogs/person", blogRoutes);
 app.use("/blogs/:id/comment", commentRoutes);
 
 app.get("/",function (req,res) {
