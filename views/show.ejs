@@ -287,8 +287,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                          <a  class="ui orange basic button" href="/#">10__<i class="frown icon"></i></a>
 
                          <div class="ui action input">
-                           <form method="get" action="/<%= comment.id %>/comments">
-                             <input type="text" value="" placeholder="Add Reply...">
+                           <form method="post" action="/blogs/<%= comment.id %>/answercom">
+                             <input type="text"name="text" value="" placeholder="Add Reply...">
                              <button class="ui teal right labeled icon button">
                              <i class="reply icon"></i>
                              ..

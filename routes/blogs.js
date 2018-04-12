@@ -1,5 +1,5 @@
 var express = require("express");
-var router  = express.Router();
+var router  = express.Router({mergeParams: true});
 var Blog = require("../models/blog");
 var User = require("../models/user");
 var Comment = require("../models/comment");
@@ -63,6 +63,7 @@ router.get("/",function (req,res) {
 
 router.post("/",function(req,res) {
   // add author to blog
+  console.log("text");
   req.body.blog.author = {
     id: req.user._id,
     username: req.user.username,
@@ -142,6 +143,47 @@ router.get("/author/:id",function (req,res) {
   });
 
 });
+
+//Comments Create
+router.post("/",middleware.isLoggedIn,function(req, res){
+   //lookup blog using ID
+
+   Blog.findById(req.params.id, function(err, blog){
+       if(err){
+           console.log(err);
+           res.redirect("/blogs");
+       } else {
+        Comment.create(req.body, function(err, comment){
+           if(err){
+ console.log("test");
+               console.log(err);
+           } else {
+               //add username and id to comment
+               comment.text = req.body.comment.text;
+               comment.author.id = req.user._id;
+               comment.author.username = req.user.username;
+               //save comment
+               comment.save();
+
+                console.log(req.user.username);
+                  //Blog.comments.push();
+      Blog.findByIdAndUpdate(
+       { _id : req.params.id},
+       {$push: {comments  : {text: req.body.comment.text,author:comment.author}}},
+       {safe: true, upsert: true},
+       function(err, model) {
+       console.log(err);
+       console.log("test3");
+});
+               console.log(comment);
+
+               res.redirect('/blogs/' + blog._id);
+           }
+        });
+       }
+   });
+});
+
 
 function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
