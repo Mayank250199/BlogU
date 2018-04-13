@@ -15,8 +15,8 @@ var blogSchema = new mongoose.Schema({
      fullname: String,
      email: String,
      mobile: String,
-     followers: String,
-     following: String
+     following: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  followers: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
   },
     created:{type:Date, default: Date.now},
   comments: [

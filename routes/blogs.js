@@ -17,11 +17,13 @@ router.get("/person/addedu",function (req,res) {
 });
 
 router.put("/person/:id",function (req,res) {
-  console.log("1step")
+  console.log("1step");
   User.findByIdAndUpdate(req.params.id,req.body.user,function(err,updatedUser) {
     if (err) {
+      console.log(err);
       res.redirect("/blogs/person");
     }else{
+      console.log("added");
       res.redirect("/blogs/person");
     }
   });

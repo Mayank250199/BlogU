@@ -34,10 +34,10 @@
   <div class="ui huge header" style="text-align:center;" ><h1><%= blog.author.fullname %></h1></div>
   <hr>
 <p style="color:#a2a6ad;">
-  <button class="ui basic button">
-   <i class="user plus icon"></i>
-  Follow
-</button>
+
+  <form class="ui form" action="/follow-user/<%= blog.author.id %>/<%= currentUser.id %>" method="post">
+    <button class="ui  basic button">Follow</button>
+  </form>
 Followers 5   |  Following 2</p>
 
 

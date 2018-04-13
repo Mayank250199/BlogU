@@ -6,6 +6,47 @@ var Comment = require("../models/comment");
 var middleware = require("../middleware");
 
 
+router.post('/follow-user/:id1/:id2', function(req, res, next) {
+  console.log("f0");
+  User.findById(req.params.id1,{username: req.body.username}, function(err, user) {
+
+    user.followers.push(req.user._id);
+    var followedUser = user._id;
+    user.save(function(err){
+        if(err){
+            //Handle error
+            console.log(err);
+            //send error response
+            res.redirect("/blogs/author/<%=blog._id%>");
+        }
+        else
+        {
+          console.log("f1");
+            // Secondly, find the user account for the logged in user
+            User.findById(req.params.id2,{ username: req.user.username }, function(err, user) {
+
+                user.following.push(followedUser);
+                user.save(function(err){
+                    if(err){
+                        //Handle error
+                        console.log(err);
+                        //send error response
+                          res.redirect("/blogs/author/<%=blog._id%>");
+                    }
+                    else{
+                      console.log("following");
+                        res.redirect("/blogs/author/<%=blog._id%>");
+                        //send success response
+
+                    }
+                });
+            });
+        }
+    });
+});
+});
+
+
 router.get("/blogs/login",function (req,res) {
   res.render("login");
 });
