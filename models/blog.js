@@ -29,7 +29,19 @@ var blogSchema = new mongoose.Schema({
                 },
                 username: String
             },
-              created:{type:Date, default: Date.now}
+              created:{type:Date, default: Date.now},
+              comment:[
+                {
+                text:String,
+                author:  {
+                        id: {
+                            type: mongoose.Schema.Types.ObjectId,
+                            ref: "User"
+                        },
+                        username: String
+                    }
+              }
+            ]
           }
    ]
 
