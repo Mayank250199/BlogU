@@ -204,7 +204,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
                                        <h2 style="text-align: center"><%= blog.title %>??</h2>
                                          <p>by-<%= blog.author.username %></p>
-                                         <form action="/blogs/<%= blog._id %>/comment" method="POST">
+                                         <form action="/blogs/<%= blog._id %>" method="POST">
                                              <div class="form-group">
                                                  <input class="form-control" type="text" name="comment[text]" placeholder="text">
                                              </div>
@@ -287,8 +287,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                          <a  class="ui orange basic button" href="/#">10__<i class="frown icon"></i></a>
 
                          <div class="ui action input">
-                           <form method="post" action="/blogs/<%= comment.id %>/answercom">
-                             <input type="text"name="text" value="" placeholder="Add Reply...">
+                           <form method="post" action="/blogs/ans/<%= comment.id %>">
+                             <input type="text" name="text" value="" placeholder="Add Reply...">
                              <button class="ui teal right labeled icon button">
                              <i class="reply icon"></i>
                              ..
@@ -321,14 +321,5 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </div>
 
 </div>
-
-
-
-
-
-
-
-
-
 
 <% include partials/footer %>
